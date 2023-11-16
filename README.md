@@ -38,6 +38,34 @@ np.save('o_precipitation_202007301000+10min.npy',img_f)
 ```
 
 ### Part II. conditional GAN architecture for training the nonlinear motion of precipitation fields
+Pix2pix is employed.
+
+#### Defining model 
+```
+# Initialize generator and discriminator
+generator = GeneratorUNet()
+discriminator = Discriminator()
+```
+#### Data loader
+```
+#Training dataset
+dataloader = DataLoader(
+    ImageDataset(is_train=0, transforms_=transforms_),
+    batch_size=opt.batch_size,
+    shuffle=True,
+    num_workers=opt.n_cpu,
+    pin_memory=True
+)
+
+#Validation dataset
+val_dataloader = DataLoader(
+    ImageDataset(is_train=1, transforms_=transforms_, mode="val"),
+    batch_size=10,
+    shuffle=True,
+    num_workers=1,
+    pin_memory=True
+)
+```
 
 
 ## Reference
