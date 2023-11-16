@@ -1,7 +1,7 @@
-# Nowcasting_cGAN_Flow(Ha & Lee 2023)
+# Nowcasting_cGAN_Flow
 
 ## Introduction
-The nowcasting model comprises optical flow algorithm and conditional GAN.
+The nowcasting model comprises optical flow algorithm and conditional GAN (Ha & Lee Remote Sens. 2023, 15(21), 5169).
 
 ## Model Architecture 
 A Deep Learning Model for Precipitation Nowcasting consists of two parts (i.e., linear extrapolation and conditional GAN).
@@ -16,7 +16,7 @@ The codes for optical flow calculation are provided in the directory "part1_opti
 ```python
 #### Single-Temporal Model ####
 
-# Reading input data
+# Reading input radar images
 img0 = np.load('path/img/radar_001.npy') # input image at t-10
 img1 = np.load('path/img/radar_002.npy') # input image at t
 
