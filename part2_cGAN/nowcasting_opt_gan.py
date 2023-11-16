@@ -90,7 +90,7 @@ transforms_ = [
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
 ]
 
-
+#Training dataset
 dataloader = DataLoader(
     ImageDataset(is_train=0, transforms_=transforms_),
     batch_size=opt.batch_size,
@@ -98,7 +98,7 @@ dataloader = DataLoader(
     num_workers=opt.n_cpu,
     pin_memory=True
 )
-
+#Validation dataset
 val_dataloader = DataLoader(
     ImageDataset(is_train=1, transforms_=transforms_, mode="val"),
     batch_size=10,
