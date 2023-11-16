@@ -38,16 +38,18 @@ np.save('o_precipitation_202007301000+10min.npy',img_f)
 ```
 
 ### Part II. conditional GAN architecture for training the nonlinear motion of precipitation fields
-Pix2pix is employed.
+We employed Pix2pix (Isola et al. 2017) to refine the nowcasting outputs produced by optical flow algorithm.
 
-#### Defining model 
+#### nowcasting_opt_gan.py
 ```
+# Import models and dataset loader
+from models import *
+from dataset_loader import *
+
 # Initialize generator and discriminator
 generator = GeneratorUNet()
 discriminator = Discriminator()
-```
-#### Data loader
-```
+
 #Training dataset
 dataloader = DataLoader(
     ImageDataset(is_train=0, transforms_=transforms_),
@@ -72,3 +74,4 @@ val_dataloader = DataLoader(
 Please refer the following publication for more details.
 
 Ha, J.-H., & Lee, H. (2023). Enhancing Rainfall Nowcasting Using Generative Deep Learning Model with Multi-Temporal Optical Flow. Remote Sensing, 15(21), 5169; https://doi.org/10.3390/rs15215169
+Isola, P., Zhu, J. -Y., Zhou T. & Efros, A. A. (2017). Image-to-Image Translation with Conditional Adversarial Networks. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Honolulu, HI, USA, pp. 5967-5976, https://doi.org/10.1109/CVPR.2017.632.
