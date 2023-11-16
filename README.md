@@ -4,9 +4,9 @@
 The nowcasting model comprises optical flow algorithm and conditional GAN.
 
 ## Model Architecture 
-A Deep Learning Model for Precipitation Nowcasting consists of two parts.
+A Deep Learning Model for Precipitation Nowcasting consists of two parts (i.e., linear extrapolation and conditional GAN).
 
-### Part I. Optical flow calculation
+### Part I. Linear extrapolation using optical flow field
 
 OpenCV library is used here to estimate the optical flow field.
 
@@ -73,5 +73,6 @@ val_dataloader = DataLoader(
 ## Reference
 Please refer the following publication for more details.
 
-Ha, J.-H., & Lee, H. (2023). Enhancing Rainfall Nowcasting Using Generative Deep Learning Model with Multi-Temporal Optical Flow. Remote Sensing, 15(21), 5169; https://doi.org/10.3390/rs15215169
+Ha, J.-H., & Lee, H. (2023). Enhancing Rainfall Nowcasting Using Generative Deep Learning Model with Multi-Temporal Optical Flow. Remote Sensing, 15(21), 5169; https://doi.org/10.3390/rs15215169.
+
 Isola, P., Zhu, J. -Y., Zhou T. & Efros, A. A. (2017). Image-to-Image Translation with Conditional Adversarial Networks. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Honolulu, HI, USA, pp. 5967-5976, https://doi.org/10.1109/CVPR.2017.632.
