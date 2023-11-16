@@ -10,7 +10,7 @@ A Deep Learning Model for Precipitation Nowcasting consists of two parts (i.e., 
 
 OpenCV library is used here to estimate the optical flow field.
 
-The codes for optical flow calculation are provided in the directory "optical_flow".
+The codes for optical flow calculation are provided in the directory "part1_optical_flow".
 
 #### Example: Optical flow estimation
 ```python
@@ -39,6 +39,8 @@ np.save('o_precipitation_202007301000+10min.npy',img_f)
 
 ### Part II. conditional GAN architecture for training the nonlinear motion of precipitation fields
 We employed Pix2pix (Isola et al. 2017) to refine the nowcasting outputs produced by optical flow algorithm.
+
+The codes are provided in the directory "part2_cGAN".
 
 #### nowcasting_opt_gan.py
 ```
